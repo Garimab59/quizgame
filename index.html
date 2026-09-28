@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Grammar Protocol — Cinematic Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="game">
+  <div class="bg-grid"></div>
+  <div class="scanlines"></div>
+
+  <section id="startScreen" class="screen active">
+    <div class="eyebrow">ENGLISH • GRAMMAR CHALLENGE</div>
+    <h1>GRAMMAR<br><span>PROTOCOL</span></h1>
+    <p class="subtitle">Test your grammar, accuracy and speed.</p>
+    <div class="mission-card">
+      <div><span>ROUNDS</span><b>05</b></div>
+      <div><span>TIME / ROUND</span><b>25s</b></div>
+      <div><span>MODE</span><b>RAPID</b></div>
+    </div>
+    <button id="startBtn" class="primary">INITIALIZE GAME <span>▶</span></button>
+    <p class="hint">Teacher mode: answers stay hidden until you choose an option.</p>
+  </section>
+
+  <section id="gameScreen" class="screen">
+    <header class="topbar">
+      <div class="brand">GRAMMAR <span>PROTOCOL</span></div>
+      <div class="hud">
+        <div><small>SCORE</small><b id="score">0000</b></div>
+        <div><small>STREAK</small><b id="streak">0</b></div>
+        <div><small>ROUND</small><b><span id="roundNo">1</span>/10</b></div>
+      </div>
+    </header>
+
+    <div class="progress"><div id="progressBar"></div></div>
+
+    <main class="arena">
+      <div class="category" id="category">EDITING</div>
+      <div class="timer-wrap">
+        <div class="timer-ring"><span id="timer">25</span></div>
+      </div>
+
+      <div class="question-card">
+        <div class="q-number" id="qNumber">01</div>
+        <h2 id="question"></h2>
+        <div id="options" class="options"></div>
+      </div>
+
+      <div class="teacher-bar">
+        <button id="showAnswer" class="secondary">REVEAL ANSWER</button>
+        <button id="nextBtn" class="secondary" disabled>NEXT →</button>
+        <span id="feedback"></span>
+      </div>
+    </main>
+  </section>
+
+
+  <div id="resultPopup" class="result-popup" aria-live="assertive">
+    <div class="popup-icon" id="popupIcon">✓</div>
+    <div class="popup-title" id="popupTitle">GOOD!</div>
+    <div class="popup-text" id="popupText"></div>
+    <button id="popupClose" class="popup-btn" type="button">CONTINUE</button>
+  </div>
+  <section id="endScreen" class="screen">
+    <div class="eyebrow">MISSION COMPLETE</div>
+    <h1 id="finalTitle">PROTOCOL<br><span>COMPLETE</span></h1>
+    <div class="final-score"><span id="finalScore">0</span><small>POINTS</small></div>
+    <div class="results">
+      <div><span>CORRECT</span><b id="correctCount">0</b></div>
+      <div><span>ACCURACY</span><b id="accuracy">0%</b></div>
+      <div><span>BEST STREAK</span><b id="bestStreak">0</b></div>
+    </div>
+    <button id="restartBtn" class="primary">RESTART MISSION ↻</button>
+  </section>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
